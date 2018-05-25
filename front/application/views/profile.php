@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $("#deleteButton").click(function(event) {
                 event.preventDefault();
                 $.ajax({
-                    url: "http://localhost:8080/users/<?php echo $user->id?>",
+                    url: "http://localhost:8080/users/<?php echo $user->id ?>",
                     type: 'DELETE',
                     contentType: "text/plain",
                     crossDomain: true,
@@ -30,7 +30,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1><?php echo ($user->firstname . ' ' . $user->lastname) ?> <button id='deleteButton'>Delete User</button></h1>
+	<h1>
+        <?php echo ($user->firstname . ' ' . $user->lastname) ?> 
+        <button id='deleteButton'>Delete User</button>
+        <a href="http://localhost:8888/rise_up_project/front/index.php/edit/<?php echo $user->id ?>">
+            <button id='createButton'>Edit User</button>
+        </a>
+    </h1>
 
 	<div id="body">
 		<p><strong>Email address:</strong> <?php echo $user->email ?></p>

@@ -12,8 +12,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $("#createButton").click(function(event) {
                 event.preventDefault();
                 $.ajax({
-                    url: "http://localhost:8080/users",
-                    type: 'POST',
+                    url: "http://localhost:8080/users/<?php echo $user->id ?>",
+                    type: 'PUT',
                     contentType: "application/x-www-form-urlencoded",
                     crossDomain: true,
                     data: {
@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         window.location.replace('/rise_up_project/front/');
                     },
                     error: function() {
-                        alert("Failed to create user!");
+                        alert("Failed to edit user!");
                     }
                 });
             });
@@ -35,20 +35,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
     <div id="container">
-    	<h1>New User <button id='createButton'>Create User</button></h1>
+    	<h1>Edit User <button id='createButton'>Save Changes</button></h1>
 
     	<div id="body">
     		<p>
-                First name: <input type="text" name="firstname">
+                First name: <input type="text" name="firstname" placeholder="<?php echo $user->firstname ?>">
             </p>
             <p>
-                Last name: <input type="text" name="lastname">
+                Last name: <input type="text" name="lastname" placeholder="<?php echo $user->lastname ?>">
             </p>
             <p>
-                Email: <input type="text" name="email">
+                Email: <input type="text" name="email" placeholder="<?php echo $user->email ?>">
             </p>
             <p>
-                Country: <input type="text" name="country">
+                Country: <input type="text" name="country" placeholder="<?php echo $user->country ?>">
             </p>
             
     	</div>
