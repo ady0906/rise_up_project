@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     crossDomain: true,
                     // data: {'action': 'delete'},
                     success:function(response) {
-                        window.location.replace('/');
+                        window.location.replace('/rise_up_project/front/');
                     },
                     error: function() {
                         alert("Failed to delete this user!");
