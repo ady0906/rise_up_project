@@ -44,6 +44,7 @@ class UserResource extends AbstractResource
     public function post($params)
     {
         $user = new User;
+        
         $user->setFirstname($params['firstname']);
         $user->setlastname($params['lastname']);
         $user->setEmail($params['email']);

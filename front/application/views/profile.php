@@ -11,13 +11,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $(function(){
             $("#deleteButton").click(function(event) {
                 event.preventDefault();
-                // var email= $("#email").val();
                 $.ajax({
                     url: "http://localhost:8080/users/<?php echo $user->id?>",
                     type: 'DELETE',
                     contentType: "text/plain",
                     crossDomain: true,
-                    // data: {'action': 'delete'},
                     success:function(response) {
                         window.location.replace('/rise_up_project/front/');
                     },

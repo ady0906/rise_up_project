@@ -8,6 +8,10 @@ body {
     color: #4F5155;
 }
 
+p {
+    font-size: 20px;
+}
+
 /* a {
     color: #003399;
     background-color: transparent;
@@ -98,4 +102,8 @@ button:hover, a:hover {
 
 #deleteButton {
     background-color:#f44336;
+}
+
+#createButton {
+    background-color:#008CBA;
 }

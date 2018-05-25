@@ -12,12 +12,22 @@ $app->get('/users/{id}', function($request, $response, $args) use ($userResource
 });
 
 $app->post('/users', function($request, $response, $args) use ($userResource) {
-    $data = $request->getQueryParams();
+    $data = array(
+        'firstname' => $request->getParam('firstname'),
+        'lastname' => $request->getParam('lastname'),
+        'email' => $request->getParam('email'),
+        'country' => $request->getParam('country')
+    );
     return $userResource->post($data);
 });
 
 $app->put('/users/{id}', function($request, $response, $args) use ($userResource) {
-    $data = $request->getQueryParams();
+    $data = array(
+        'firstname' => $request->getParam('firstname'),
+        'lastname' => $request->getParam('lastname'),
+        'email' => $request->getParam('email'),
+        'country' => $request->getParam('country')
+    );
     return $userResource->put($args['id'], $data);
 });
 
