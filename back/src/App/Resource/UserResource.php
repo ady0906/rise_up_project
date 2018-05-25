@@ -68,15 +68,23 @@ class UserResource extends AbstractResource
     {
         $em = $this->getEntityManager();
         $user = $em->getRepository('App\Entity\User')->find($id);
+        
+        if ($params['action'] == 'delete') {
+            $em->remove($user);
+            $em->flush($user);
+            
+            return json_encode(array('message' => 'success'));
 
-        $user->setFirstname($params['firstname']);
-        $user->setlastname($params['lastname']);
-        $user->setEmail($params['email']);
-        $user->setCountry($params['country']);
-        
-        $this->getEntityManager()->persist($user);
-        $this->getEntityManager()->flush();
-        
-        return json_encode($this->convertToArray($user));
+        } elseif ($params['action'] == 'put') {
+            $user->setFirstname($params['firstname']);
+            $user->setlastname($params['lastname']);
+            $user->setEmail($params['email']);
+            $user->setCountry($params['country']);
+            
+            $em->persist($user);
+            $em->flush();
+            
+            return json_encode($this->convertToArray($user));
+        }
     }
 }

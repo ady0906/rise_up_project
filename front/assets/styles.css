@@ -95,3 +95,7 @@ a {
 button:hover, a:hover {
     opacity: 0.7;
 }
+
+#deleteButton {
+    background-color:#f44336;
+}
