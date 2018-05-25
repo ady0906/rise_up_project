@@ -5,8 +5,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to the Rise Up Test App</title>
-	<link rel="stylesheet" type="text/css" href="http://localhost:8888/rise_up_project/front/assets/styles.css" />
-    <script src="http://localhost:8888/rise_up_project/front/assets/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="/rise_up_project/front/assets/styles.css" />
+    <script src="/rise_up_project/front/assets/jquery.js"></script>
     <script>
         $(function(){
             $("#createButton").click(function(event) {

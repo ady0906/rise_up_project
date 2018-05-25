@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
 
-class Profile extends CI_Controller {
+class Edit extends CI_Controller {
     
     public function index($id)
 	{
@@ -13,6 +13,7 @@ class Profile extends CI_Controller {
 		]);
 		$res = $client->request('GET', '/users/' . $id);
 		$data["user"] = json_decode(($res->getBody())->getContents());
-		$this->load->view('profile', $data);
+		$this->load->view('edit', $data);
 	}
+    
 }
